@@ -1,6 +1,6 @@
 {
   "name": "file2variables-brunch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert static files to js variables",
   "main": "index.js",
   "author": "Vasyl Lyaskovec",
