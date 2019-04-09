@@ -1,6 +1,15 @@
 class File2VarsCompiler {
     constructor(config) {
         this.config = config.plugins.file2variables || {};
+        this.pattern = {test: path => {
+            let check = false;
+            Object.keys(this.config).forEach(key => {
+                if (path.match(this.config[key])) {
+                    check = true
+                }
+            })
+            return check;
+        }}
     }
 
     compile(file) {
@@ -14,9 +23,9 @@ class File2VarsCompiler {
                 k = key;
             }
         })
-        let compiled = "";
+        let compiled = data;
         if (k) {
-            compiled = `(function(){(this['${k}'] = this['${k}'] || {})["${match[1]}"] = \`${data}\`;}());`
+            compiled = `(function(){(this['${k}'] = this['${k}'] || {})["${match[1]}"] = \`${data}\`;})();`
         }
         return Promise.resolve({data: compiled});
     }
