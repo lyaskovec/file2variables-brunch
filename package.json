@@ -1,11 +1,13 @@
 {
   "name": "file2variables-brunch",
   "version": "0.0.1",
-  "description": "Convert files to js variables",
+  "description": "Convert static files to js variables",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "author": "Vasyl Lyaskovec",
+  "homepage": "https://github.com/lyaskovec/file2variables-brunch",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lyaskovec/file2variables-brunch.git"
+  }
   "license": "ISC"
 }
