@@ -25,7 +25,7 @@ class File2VarsCompiler {
         })
         let compiled = data;
         if (k) {
-            compiled = `(function(){(this['${k}'] = this['${k}'] || {})["${match[1]}"] = \`${data}\`;})();`
+            compiled = `(function(){(this['${k}'] = this['${k}'] || {})["${match[1]}"] = \`${data}\`;}());`
         }
         return Promise.resolve({data: compiled});
     }
